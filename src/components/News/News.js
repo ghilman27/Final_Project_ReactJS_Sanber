@@ -62,18 +62,20 @@ const NewsItem = ({ article }) => {
 // main component
 const News = () => {
   const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(true);
 
   // fetch news from API when rendered
   useEffect(() => {
     const fetchAPI = async () => {
       setData(await API.getNews());
+      setLoading(false);
     };
 
     fetchAPI();
   }, []);
 
   // show loading page if the data still processing
-  if (!data) return <div>Loading .....</div>;
+  if (isLoading) return <div>Loading .....</div>;
 
   return (
     <div>
