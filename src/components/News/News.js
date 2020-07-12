@@ -79,6 +79,8 @@ const News = () => {
 
   return (
     <div>
+      {/* the error goes here when loaded to codesandbox or google firebase, (after clicked the nav button)
+      dunno why, guess it's a router problem in remote hosting. Try to clone the repo and build, it'll works! */}
       {data.map((article, index) => (
         <NewsItem key={index} article={article} />
       ))}
