@@ -51,7 +51,7 @@ export default class API {
 	static async getNews() {
 		try {
 			const API_KEY = `b0b15a2bb3f9473eb9e356b671d061df`;
-			const response = await axios.get(`https://newsapi.org/v2/everything?q=corona-virus&languasortBy=publishedAt&language=en&apiKey=${API_KEY}&from=2020-07-10&to=2020-07-10`);
+			const response = await axios.get(`https://newsapi.org/v2/everything?q=corona-virus&languasortBy=publishedAt&language=en&apiKey=${API_KEY}`);
 			return response.data.articles;
 		} catch (error) {
 			return error;
